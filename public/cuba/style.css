@@ -1,5 +1,52 @@
+/* public/cuba/style.css */
+
 body {
     font-family: 'Times New Roman', serif;
+    background-color: #fff8e1;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #ffdd57;
+    border-bottom: 1px solid #e0a800;
+    padding: 10px 0;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+}
+
+nav a {
+    color: #d9534f;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+    position: relative;
+}
+
+nav a::after {
+    content: '';
+    display: block;
+    width: 0%;
+    height: 2px;
+    background-color: red;
+    transition: width 0.3s;
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+.content {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 0 20px;
 }
 
 .btn {
@@ -8,6 +55,7 @@ body {
     padding: 10px 20px;
     border: none;
     cursor: pointer;
+    transition: background-color 0.3s;
 }
 
 .btn:hover {
@@ -17,14 +65,38 @@ body {
 .alert {
     padding: 15px;
     margin-bottom: 20px;
+    border-radius: 4px;
+    transition: opacity 0.3s;
 }
 
 .alert-danger {
-    background-color: #f2dede;
-    color: #a94442;
+    background-color: #f8d7da;
+    color: #721c24;
 }
 
 .alert-success {
-    background-color: #dff0d8;
-    color: #3c763d;
+    background-color: #d4edda;
+    color: #155724;
+}
+
+form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+form select {
+    padding: 8px;
+    margin-bottom: 15px;
+    width: 100%;
+    max-width: 200px;
+}
+
+h1 {
+    text-align: center;
+}
+
+p {
+    font-size: 16px;
+    line-height: 1.5;
 }
